@@ -25,7 +25,7 @@ struct MasterMapper {
                 ? .rows(masterPlaylist.mediaAlternativeRenditions.map {
                     MasterSectionViewModel(
                         key: $0.name,
-                        value: $0.URI ?? "_",
+                        value: $0.URI?.readablePathName ?? "_",
                         navigation: .mediaAlternativeRendition($0)
                     )
 
@@ -39,7 +39,7 @@ struct MasterMapper {
                 ? .rows(masterPlaylist.mediaPlaylists.map {
                     MasterSectionViewModel(
                         key: $0.resolution?.stringValue ?? "unknown_resolution",
-                        value: $0.path,
+                        value: $0.path.readablePathName,
                         navigation: .mediaPlaylist($0.hadRelativePath ? ($0.mediaPlaylist(withBaseURL: m3u8URL.URL) ?? $0) : $0)
                     )
                 })
@@ -49,7 +49,7 @@ struct MasterMapper {
                 key: "iframe_playlist",
                 value: "\(masterPlaylist.iFramePlaylists.count)",
                 navigation: masterPlaylist.iFramePlaylists.count > 0
-                ? .rows(masterPlaylist.iFramePlaylists.map { MasterSectionViewModel(key: "\($0.bandwidth)", value: $0.URI) })
+                ? .rows(masterPlaylist.iFramePlaylists.map { MasterSectionViewModel(key: "\($0.bandwidth)", value: $0.URI.readablePathName) })
                 : .none
             )
         ]

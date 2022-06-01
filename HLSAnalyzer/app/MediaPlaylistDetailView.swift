@@ -45,7 +45,7 @@ struct MediaPlaylistDetailInternalView: View {
                     NavigationLink {
                         SegmentDetailView(segment: segment)
                     } label: {
-                        KeyValueView(key: "\(segment.sequence ?? -1)", value: segment.path)
+                        KeyValueView(key: item.viewModel.key, value: item.viewModel.value)
                     }
                 case .rows, .none:
                     KeyValueView(key: item.viewModel.key, value: item.viewModel.value)

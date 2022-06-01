@@ -27,8 +27,8 @@ struct MediaPlaylistDetailMapper {
                 value: "\(mediaPlaylistDetail.segments.count)",
                 navigation: .rows(mediaPlaylistDetail.segments.map {
                     MediaPlaylistDetailSectionViewModel(
-                        key: $0.title ?? "_",
-                        value: $0.path,
+                        key: $0.path.readablePathName ,
+                        value: $0.title,
                         navigation: .segment($0)
                     )
                 })
