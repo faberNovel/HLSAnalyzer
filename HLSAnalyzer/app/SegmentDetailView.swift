@@ -14,7 +14,7 @@ struct SegmentDetailView: View {
     let segment: MediaSegment
 
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             KeyValueView(key: "duration", value: "\(segment.duration)")
             KeyValueView(key: "sequence", value: segment.sequence.flatMap { "\($0)" } ?? "_")
             KeyValueView(key: "subrangeLength", value: segment.subrangeLength.flatMap { "\($0)" } ?? "_")
@@ -24,5 +24,6 @@ struct SegmentDetailView: View {
             KeyValueView(key: "path", value: "\(segment.path)")
             Spacer()
         }
+        .padding(20)
     }
 }
