@@ -16,6 +16,8 @@ public class MasterPresenter: ObservableObject {
     @Published public var loading = false
     @Published public var error: Error?
 
+    public var title: String { m3u8URL.URL.absoluteString }
+
     private var m3u8: MasterPlaylist? {
         didSet { viewModel = m3u8.flatMap { MasterMapper(m3u8URL: m3u8URL, masterPlaylist: $0).map() } }
     }

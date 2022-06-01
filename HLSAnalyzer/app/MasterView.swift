@@ -21,7 +21,7 @@ struct MasterView: View {
         }
         Group {
             if let viewModel = presenter.viewModel {
-                MasterDetailView(sections: viewModel)
+                MasterDetailView(title: presenter.title, sections: viewModel)
             } else {
                 Text("no_m3u8_placeholder")
             }
@@ -35,6 +35,7 @@ struct MasterView: View {
 
 struct MasterDetailView: View {
 
+    let title: String
     let sections: [MasterSectionViewModel]
 
     var body: some View {
@@ -65,7 +66,7 @@ struct MasterDetailView: View {
             }
             .listStyle(.sidebar)
             .frame(minWidth: 400)
-        }
+        }.navigationTitle(title)
     }
 }
 
