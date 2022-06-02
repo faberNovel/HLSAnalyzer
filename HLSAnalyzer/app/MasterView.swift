@@ -14,19 +14,13 @@ struct MasterView: View {
     @ObservedObject var presenter: MasterPresenter
 
     var body: some View {
-        let binding = Binding<Bool> {
-            presenter.error != nil
-        } set: { _ in
-            presenter.error = nil
+        StatefulView(
+            error: $presenter.error,
+            viewModel: $presenter.viewModel,
+            placeholderView: { Text("no_m3u8_placeholder") }
+        ) {
+                MasterDetailView(title: presenter.title, sections: $0)
         }
-        Group {
-            if let viewModel = presenter.viewModel {
-                MasterDetailView(title: presenter.title, sections: viewModel)
-            } else {
-                Text("no_m3u8_placeholder")
-            }
-        }
-        .alert(presenter.error?.localizedDescription ?? "error", isPresented: binding) {}
         .onAppear { [weak presenter] in
             presenter?.appearance()
         }

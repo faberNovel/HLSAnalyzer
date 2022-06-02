@@ -14,19 +14,13 @@ struct MediaPlaylistDetailView: View {
     @ObservedObject var presenter: MediaPlaylistDetailPresenter
 
     var body: some View {
-        let binding = Binding<Bool> {
-            presenter.error != nil
-        } set: { _ in
-            presenter.error = nil
-        }
-        Group {
-            if let viewModel = presenter.viewModel {
-                MediaPlaylistDetailInternalView(sections: viewModel)
-            } else {
-                Text("no_media_playlist_placeholder")
-            }
-        }
-        .alert(presenter.error?.localizedDescription ?? "error", isPresented: binding) {}
+        StatefulView(
+            error: $presenter.error,
+            loading: $presenter.loading,
+            viewModel: $presenter.viewModel,
+            placeholderView: { Text("no_media_playlist_placeholder") },
+            viewModelView: { MediaPlaylistDetailInternalView(sections: $0) }
+        )
         .onAppear { [weak presenter] in
             presenter?.appearance()
         }
