@@ -18,6 +18,7 @@
 		874E20162840D4E600552CBE /* ContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874E20152840D4E600552CBE /* ContentPresenter.swift */; };
 		875C308928475CA400339606 /* KeyValueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C308828475CA400339606 /* KeyValueViewModel.swift */; };
 		875C308D2847901200339606 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875C308C2847901200339606 /* String+Path.swift */; };
+		87AF6EC92848FF0100185320 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF6EC82848FF0100185320 /* StatefulView.swift */; };
 		87C2656628450AD5007F65E1 /* MasterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2656528450AD5007F65E1 /* MasterPresenter.swift */; };
 		87C2656828451234007F65E1 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C2656728451234007F65E1 /* MasterView.swift */; };
 		87C2656B28460300007F65E1 /* M3U8Parser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87D57355284109FC00BFBA88 /* M3U8Parser.framework */; };
@@ -224,6 +225,7 @@
 		874E20152840D4E600552CBE /* ContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPresenter.swift; sourceTree = "<group>"; };
 		875C308828475CA400339606 /* KeyValueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueViewModel.swift; sourceTree = "<group>"; };
 		875C308C2847901200339606 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
+		87AF6EC82848FF0100185320 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		87C2656528450AD5007F65E1 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
 		87C2656728451234007F65E1 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		87C2656928460106007F65E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -396,6 +398,14 @@
 			path = shared;
 			sourceTree = "<group>";
 		};
+		87AF6EC72848FEF500185320 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				87AF6EC82848FF0100185320 /* StatefulView.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
 		87C2656A28460300007F65E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +524,7 @@
 		87D573BB2841127A00BFBA88 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				87AF6EC72848FEF500185320 /* shared */,
 				874E1FEA2840CC9C00552CBE /* HLSAnalyzerApp.swift */,
 				874E1FEC2840CC9C00552CBE /* ContentView.swift */,
 				87C265862846066C007F65E1 /* SelectionView.swift */,
@@ -776,6 +787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87AF6EC92848FF0100185320 /* StatefulView.swift in Sources */,
 				87D573C4284112D000BFBA88 /* PresenterAssembly.swift in Sources */,
 				87D573C3284112D000BFBA88 /* MainDependencyProvider.swift in Sources */,
 				87C2656828451234007F65E1 /* MasterView.swift in Sources */,
