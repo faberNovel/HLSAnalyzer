@@ -19,12 +19,14 @@ struct SelectionView: View {
         HStack {
             TextField("entry_placeholder", text: $presenter.entry)
                 .disableAutocorrection(true)
-            if let m3u8URL = presenter.m3u8URL {
-                Button("load") { selection(m3u8URL) }
-            } else {
-                Button("load", action: {}).disabled(true)
-            }
+                .onSubmit(checkAndSelect)
+            Button("load", action: checkAndSelect).disabled(presenter.m3u8URL == nil)
         }.padding(30)
+    }
+
+    private func checkAndSelect() {
+        guard let m3u8URL = presenter.m3u8URL else { return }
+        selection(m3u8URL)
     }
 }
 
