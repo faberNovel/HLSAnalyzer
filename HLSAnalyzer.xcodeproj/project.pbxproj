@@ -382,9 +382,7 @@
 				875C308728475C8A00339606 /* shared */,
 				87C2658828461278007F65E1 /* Selection */,
 				87C26589284612A3007F65E1 /* Master */,
-				87C2659628461B6B007F65E1 /* iFramePlaylist */,
 				87C2659528461B5F007F65E1 /* MediaPlaylistDetail */,
-				87C2659428461B52007F65E1 /* MediaAlternativeRendition */,
 			);
 			path = backstage;
 			sourceTree = "<group>";
@@ -431,13 +429,6 @@
 			path = Master;
 			sourceTree = "<group>";
 		};
-		87C2659428461B52007F65E1 /* MediaAlternativeRendition */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MediaAlternativeRendition;
-			sourceTree = "<group>";
-		};
 		87C2659528461B5F007F65E1 /* MediaPlaylistDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,13 +438,6 @@
 				87C2659F2846509D007F65E1 /* MediaPlaylistDetailSectionViewModel.swift */,
 			);
 			path = MediaPlaylistDetail;
-			sourceTree = "<group>";
-		};
-		87C2659628461B6B007F65E1 /* iFramePlaylist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = iFramePlaylist;
 			sourceTree = "<group>";
 		};
 		87D57356284109FC00BFBA88 /* M3U8Parser */ = {
@@ -697,7 +681,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					874E1FE62840CC9C00552CBE = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -1060,6 +1044,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HLSAnalyzer/HLSAnalyzer.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1087,6 +1072,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HLSAnalyzer/HLSAnalyzer.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
