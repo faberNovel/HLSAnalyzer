@@ -13,6 +13,13 @@ struct IFramePlaylistDetailView: View {
     let iFramePlaylist: IFramePlaylist
 
     var body: some View {
-        Text("DETAIL !!!")
+        VStack(spacing: 8) {
+            KeyValueView(key: "iframe_playlist_bandwidth", value: "\(iFramePlaylist.bandwidth)")
+            KeyValueView(key: "iframe_playlist_URI", value: iFramePlaylist.URI)
+            KeyValueView(key: "iframe_playlist_resolution", value: iFramePlaylist.resolution?.stringValue)
+            KeyValueView(key: "iframe_playlist_codecs", value: iFramePlaylist.codecs)
+            Spacer()
+        }
+        .padding(20)
     }
 }
