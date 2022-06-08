@@ -22,7 +22,7 @@ struct StatefulView<ViewModel, ViewModelView: View, PlaceholderView: View>: View
          @ViewBuilder placeholderView: @escaping () -> PlaceholderView,
          @ViewBuilder viewModelView: @escaping (ViewModel) -> ViewModelView) {
         self._error = error
-        self._loading = loading
+        self._loading = loading.animation()
         self._viewModel = viewModel
         self.placeholderView = placeholderView()
         self.viewModelView = viewModelView
@@ -38,13 +38,41 @@ struct StatefulView<ViewModel, ViewModelView: View, PlaceholderView: View>: View
             if let viewModel = viewModel {
                 viewModelView(viewModel)
             } else {
-                placeholderView
+                VStack {
+                    Spacer()
+                    Spacer()
+                    placeholderView
+                    Spacer()
+                }
             }
+        }
+        .overlay {
+            LoadingView(loading: loading)
+                .transition(.opacity)
+                .animation(.default, value: loading)
         }
         .alert(error?.localizedDescription ?? "error", isPresented: binding) {}
     }
 }
 
+private struct LoadingView: View {
+
+    let loading: Bool
+
+    var body: some View {
+        if loading {
+            ZStack(alignment: .center) {
+                VStack {
+                    Text("loading")
+                    ProgressView()
+                }.frame(minWidth: 100, minHeight: 100)
+            }.background {
+                Color(white: 0.5, opacity: 0.75).cornerRadius(24)
+            }.frame(alignment: .center)
+                .padding(200)
+        }
+    }
+}
 extension StatefulView where PlaceholderView == EmptyView {
 
     init(error: Binding<Error?> = Binding(get: { nil }, set: { _ in }),
