@@ -15,13 +15,13 @@ struct SegmentDetailView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            KeyValueView(key: "duration", value: "\(segment.duration)")
-            KeyValueView(key: "sequence", value: segment.sequence.flatMap { "\($0)" } ?? "_")
-            KeyValueView(key: "subrangeLength", value: segment.subrangeLength.flatMap { "\($0)" } ?? "_")
-            KeyValueView(key: "subrangeStart", value: segment.subrangeStart.flatMap { "\($0)" } ?? "_")
-            KeyValueView(key: "title", value: segment.title.flatMap { "\($0)" } ?? "_")
-            KeyValueView(key: "discontinuity", value: "\(segment.discontinuity)")
-            KeyValueView(key: "path", value: "\(segment.path)")
+            KeyValueView(key: "segment_duration", value: "\(segment.duration)")
+            KeyValueView(key: "segment_sequence", value: segment.sequence.flatMap { "\($0)" } ?? "_")
+            KeyValueView(key: "segment_subrangeLength", value: segment.subrangeLength.flatMap { "\($0)" } ?? "_")
+            KeyValueView(key: "segment_subrangeStart", value: segment.subrangeStart.flatMap { "\($0)" } ?? "_")
+            KeyValueView(key: "segment_title", value: segment.title.flatMap { "\($0)" } ?? "_")
+            KeyValueView(key: "segment_discontinuity", value: "\(segment.discontinuity)")
+            KeyValueView(key: "segment_path", value: "\(segment.path)")
             Spacer()
         }
         .padding(20)
