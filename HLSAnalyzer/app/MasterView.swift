@@ -16,6 +16,7 @@ struct MasterView: View {
     var body: some View {
         StatefulView(
             error: $presenter.error,
+            loading: $presenter.loading,
             viewModel: $presenter.viewModel,
             placeholderView: { Text("no_m3u8_placeholder") }
         ) {
