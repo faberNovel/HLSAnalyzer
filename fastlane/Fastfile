@@ -1,0 +1,111 @@
+skip_docs
+
+before_all do
+  ensure_git_status_clean(
+    show_diff: true,
+    show_uncommitted_changes: true
+  ) if is_ci
+end
+
+#####################################################
+# Public
+#####################################################
+
+
+lane :hlsa_release do |options|
+  xcversion(version: "13.4")
+  bump_build_number = options[:bump_build_number]
+  tag_release = options[:tag_release]
+
+  hlsa_bump_build_number if bump_build_number
+
+  hlsa_build
+
+  hlsa_tag if tag_release
+  hlsa_github_release if tag_release
+end
+
+
+
+#####################################################
+# Private
+#####################################################
+
+SCHEME = 'HLSAnalyzer'
+TARGET_NAME = 'HLSAnalyzer'
+WORKSPACE = "HLSAnalyzer.xcworkspace"
+XCODEPROJ = "HLSAnalyzer.xcodeproj"
+GYM_OUTPUT = "#{SCHEME}.app"
+
+
+private_lane :hlsa_bump_build_number do
+  increment_build_number
+  commit_version_bump(xcodeproj: XCODEPROJ)
+end
+
+
+private_lane :hlsa_build do
+  gym(
+    scheme: SCHEME,
+    skip_codesigning: true,
+    skip_package_ipa: true,
+    skip_package_pkg: true,
+    configuration: "Release",
+    output_name: SCHEME
+  )
+end
+
+private_lane :hlsa_tag do
+  tag = "#{app_version_number}/#{app_build_number}"
+  add_git_tag(
+    tag: tag,
+    force: true
+  )
+end
+
+private_lane :hlsa_github_release do
+  tag = "#{app_version_number}/#{app_build_number}"
+  set_github_release(
+    repository_name: ENV["GITHUB_REPOSITORY"],
+    api_token: ENV["GITHUB_TOKEN"],
+    name: tag,
+    tag_name: tag,
+    description: "",
+    upload_assets: [GYM_OUTPUT].compact
+  )
+end
+
+def app_version_number
+  get_version_number(
+    xcodeproj: XCODEPROJ,
+    target: SCHEME
+  )
+end
+
+def app_build_number
+  get_build_number(xcodeproj: XCODEPROJ)
+end
+
+def get_build_settings(build_setting)
+  # xcodebuild -showBuildSettings will return something like `   PRODUCT_NAME = YourAppName`
+  # So we search for the `    PRODUCT_NAME =` part and remove it from the line
+  string_to_search_for = build_setting + ' ='
+
+  command = []
+  command << "xcodebuild -showBuildSettings"
+  command << "-project #{XCODEPROJ}"
+  command << "-configuration Release"
+  command << "-scheme #{SCHEME}"
+  command << "2>/dev/null" # removes warnigs
+  command << "| grep \"\s#{string_to_search_for}\""
+
+  begin
+    Dir.chdir("..") do
+      build_setting_value = Action.sh(command.join(' ')).gsub(string_to_search_for, '').strip
+      return build_setting_value
+    end
+  rescue StandardError
+    UI.user_error!("Could not find the requested build setting #{build_setting}")
+  end
+end
+
