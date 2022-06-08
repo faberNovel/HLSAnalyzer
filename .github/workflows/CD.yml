@@ -38,7 +38,7 @@ jobs:
           GIT_AUTHOR_NAME: Bot HLS Analyzer
           GIT_AUTHOR_EMAIL: bot@fabernovel.com
           GIT_COMMITTER_EMAIL: bot@fabernovel.com
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_PAT }}
         run: |
           bundle exec fastlane hlsa_release \
           tag_release:${{ github.event.inputs.tag_release }} \
