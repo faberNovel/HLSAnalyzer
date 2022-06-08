@@ -40,7 +40,6 @@ public class MasterPresenter: ObservableObject {
             self.m3u8 = try await HLSInteractor.execute(m3u8URL: m3u8URL)
         } catch {
             self.error = error
-            print(error)
         }
         loading = false
     }
