@@ -225,6 +225,10 @@
 		874E20152840D4E600552CBE /* ContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPresenter.swift; sourceTree = "<group>"; };
 		875C308828475CA400339606 /* KeyValueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueViewModel.swift; sourceTree = "<group>"; };
 		875C308C2847901200339606 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
+		877B115A28534A100053A846 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		878C39E628576DF500B15F9D /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		878C39E828576E0000B15F9D /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		878C39EB28576E2700B15F9D /* install_dependencies.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_dependencies.sh; sourceTree = "<group>"; };
 		87AF6EC82848FF0100185320 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		87C2656528450AD5007F65E1 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
 		87C2656728451234007F65E1 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 		874E1FDE2840CC9C00552CBE = {
 			isa = PBXGroup;
 			children = (
+				877B1159285349EA0053A846 /* ci_scripts */,
 				874E1FE92840CC9C00552CBE /* HLSAnalyzer */,
 				874E20082840D45300552CBE /* backstage */,
 				87D57356284109FC00BFBA88 /* M3U8Parser */,
@@ -392,6 +397,41 @@
 			children = (
 				875C308828475CA400339606 /* KeyValueViewModel.swift */,
 				875C308C2847901200339606 /* String+Path.swift */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		877B1159285349EA0053A846 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				878C39EA28576E1000B15F9D /* shared */,
+				878C39E528576DE200B15F9D /* CI */,
+				878C39E428576DD900B15F9D /* CD */,
+				877B115A28534A100053A846 /* ci_post_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
+		878C39E428576DD900B15F9D /* CD */ = {
+			isa = PBXGroup;
+			children = (
+				878C39E628576DF500B15F9D /* ci_post_xcodebuild.sh */,
+			);
+			path = CD;
+			sourceTree = "<group>";
+		};
+		878C39E528576DE200B15F9D /* CI */ = {
+			isa = PBXGroup;
+			children = (
+				878C39E828576E0000B15F9D /* ci_post_xcodebuild.sh */,
+			);
+			path = CI;
+			sourceTree = "<group>";
+		};
+		878C39EA28576E1000B15F9D /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				878C39EB28576E2700B15F9D /* install_dependencies.sh */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -1049,6 +1089,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HLSAnalyzer/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HLSAnalyzer/Info.plist;
@@ -1078,6 +1119,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HLSAnalyzer/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HLSAnalyzer/Info.plist;
@@ -1098,10 +1140,12 @@
 		874E20122840D45300552CBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1127,10 +1171,12 @@
 		874E20132840D45300552CBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
