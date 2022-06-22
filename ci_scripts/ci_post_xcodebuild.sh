@@ -5,4 +5,4 @@
 
 echo "#### Dispatching CI script to ./$CI_WORKFLOW/"
 
-./$CI_WORKFLOW/ci_post_xcodebuild.sh
+./"$CI_WORKFLOW"/ci_post_xcodebuild.sh
