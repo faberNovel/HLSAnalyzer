@@ -227,7 +227,6 @@
 		875C308C2847901200339606 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
 		877B115A28534A100053A846 /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		878C39E628576DF500B15F9D /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
-		878C39E828576E0000B15F9D /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		878C39EB28576E2700B15F9D /* install_dependencies.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_dependencies.sh; sourceTree = "<group>"; };
 		87AF6EC82848FF0100185320 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		87C2656528450AD5007F65E1 /* MasterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterPresenter.swift; sourceTree = "<group>"; };
@@ -280,6 +279,7 @@
 		87D573BF284112D000BFBA88 /* PresenterAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterAssembly.swift; sourceTree = "<group>"; };
 		87D573C0284112D000BFBA88 /* InteractorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorAssembly.swift; sourceTree = "<group>"; };
 		87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
+		EC288F202862E97000F8A7DB /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,8 +405,8 @@
 			isa = PBXGroup;
 			children = (
 				878C39EA28576E1000B15F9D /* shared */,
-				878C39E528576DE200B15F9D /* CI */,
 				878C39E428576DD900B15F9D /* CD */,
+				EC288F1F2862E97000F8A7DB /* CI on PR */,
 				877B115A28534A100053A846 /* ci_post_xcodebuild.sh */,
 			);
 			path = ci_scripts;
@@ -418,14 +418,6 @@
 				878C39E628576DF500B15F9D /* ci_post_xcodebuild.sh */,
 			);
 			path = CD;
-			sourceTree = "<group>";
-		};
-		878C39E528576DE200B15F9D /* CI */ = {
-			isa = PBXGroup;
-			children = (
-				878C39E828576E0000B15F9D /* ci_post_xcodebuild.sh */,
-			);
-			path = CI;
 			sourceTree = "<group>";
 		};
 		878C39EA28576E1000B15F9D /* shared */ = {
@@ -571,6 +563,22 @@
 				87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		EC288F1F2862E97000F8A7DB /* CI on PR */ = {
+			isa = PBXGroup;
+			children = (
+				EC288F202862E97000F8A7DB /* ci_post_xcodebuild.sh */,
+			);
+			path = "CI on PR";
+			sourceTree = "<group>";
+		};
+		EC288F262862EAE600F8A7DB /* HLSAnalyzerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */,
+			);
+			path = HLSAnalyzerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
