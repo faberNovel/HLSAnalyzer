@@ -84,6 +84,7 @@
 		87D573C4284112D000BFBA88 /* PresenterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573BF284112D000BFBA88 /* PresenterAssembly.swift */; };
 		87D573C5284112D000BFBA88 /* InteractorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C0284112D000BFBA88 /* InteractorAssembly.swift */; };
 		87D573C6284112D000BFBA88 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */; };
+		EC288F282862EAE600F8A7DB /* HLSAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 87D573A228410B2300BFBA88;
 			remoteInfo = core;
+		};
+		EC288F292862EAE600F8A7DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 874E1FDF2840CC9C00552CBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 874E1FE62840CC9C00552CBE;
+			remoteInfo = HLSAnalyzer;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -280,6 +288,8 @@
 		87D573C0284112D000BFBA88 /* InteractorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorAssembly.swift; sourceTree = "<group>"; };
 		87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryAssembly.swift; sourceTree = "<group>"; };
 		EC288F202862E97000F8A7DB /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
+		EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLSAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSAnalyzerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +339,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC288F222862EAE600F8A7DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -341,6 +358,7 @@
 				87D57356284109FC00BFBA88 /* M3U8Parser */,
 				87D5739228410B1C00BFBA88 /* data */,
 				87D573A428410B2300BFBA88 /* core */,
+				EC288F262862EAE600F8A7DB /* HLSAnalyzerTests */,
 				874E1FE82840CC9C00552CBE /* Products */,
 				87C2656A28460300007F65E1 /* Frameworks */,
 			);
@@ -354,6 +372,7 @@
 				87D57355284109FC00BFBA88 /* M3U8Parser.framework */,
 				87D5739128410B1C00BFBA88 /* data.framework */,
 				87D573A328410B2300BFBA88 /* core.framework */,
+				EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -721,6 +740,24 @@
 			productReference = 87D573A328410B2300BFBA88 /* core.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EC288F242862EAE600F8A7DB /* HLSAnalyzerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC288F2B2862EAE600F8A7DB /* Build configuration list for PBXNativeTarget "HLSAnalyzerTests" */;
+			buildPhases = (
+				EC288F212862EAE600F8A7DB /* Sources */,
+				EC288F222862EAE600F8A7DB /* Frameworks */,
+				EC288F232862EAE600F8A7DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC288F2A2862EAE600F8A7DB /* PBXTargetDependency */,
+			);
+			name = HLSAnalyzerTests;
+			productName = HLSAnalyzerTests;
+			productReference = EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -728,7 +765,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					874E1FE62840CC9C00552CBE = {
@@ -745,6 +782,10 @@
 					};
 					87D573A228410B2300BFBA88 = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					EC288F242862EAE600F8A7DB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 874E1FE62840CC9C00552CBE;
 					};
 				};
 			};
@@ -769,6 +810,7 @@
 				87D573A228410B2300BFBA88 /* core */,
 				87D5739028410B1C00BFBA88 /* data */,
 				87D57354284109FC00BFBA88 /* M3U8Parser */,
+				EC288F242862EAE600F8A7DB /* HLSAnalyzerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -806,6 +848,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		87D573A128410B2300BFBA88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC288F232862EAE600F8A7DB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -903,6 +952,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC288F212862EAE600F8A7DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC288F282862EAE600F8A7DB /* HLSAnalyzerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -955,6 +1012,11 @@
 			isa = PBXTargetDependency;
 			target = 87D573A228410B2300BFBA88 /* core */;
 			targetProxy = 87D573A928410B2300BFBA88 /* PBXContainerItemProxy */;
+		};
+		EC288F2A2862EAE600F8A7DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 874E1FE62840CC9C00552CBE /* HLSAnalyzer */;
+			targetProxy = EC288F292862EAE600F8A7DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1381,6 +1443,40 @@
 			};
 			name = Release;
 		};
+		EC288F2C2862EAE600F8A7DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabernovel.hlsanalyzer.HLSAnalyzerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLSAnalyzer.app/Contents/MacOS/HLSAnalyzer";
+			};
+			name = Debug;
+		};
+		EC288F2D2862EAE600F8A7DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabernovel.hlsanalyzer.HLSAnalyzerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HLSAnalyzer.app/Contents/MacOS/HLSAnalyzer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1434,6 +1530,15 @@
 			buildConfigurations = (
 				87D573AE28410B2300BFBA88 /* Debug */,
 				87D573AF28410B2300BFBA88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC288F2B2862EAE600F8A7DB /* Build configuration list for PBXNativeTarget "HLSAnalyzerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC288F2C2862EAE600F8A7DB /* Debug */,
+				EC288F2D2862EAE600F8A7DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
