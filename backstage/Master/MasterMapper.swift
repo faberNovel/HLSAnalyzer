@@ -73,7 +73,7 @@ private extension MasterPlaylist {
                 ])
             )
         } else {
-            return MasterSectionViewModel(key: "session_key", value: "no_session_key")
+            return MasterSectionViewModel(key: "session_key", value: NSLocalizedString("no_session_key", comment: ""))
         }
     }
 
