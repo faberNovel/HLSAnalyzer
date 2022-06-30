@@ -64,7 +64,6 @@ private extension MasterPlaylist {
                 key: "session_key",
                 value: "",
                 navigation: .rows([
-                    MasterSectionViewModel(key: "session_key", value: ""),
                     MasterSectionViewModel(key: "session_key_method", value: sessionKey.method.rawValue),
                     MasterSectionViewModel(key: "session_key_type", value: sessionKey.playlistType.stringValue),
                     MasterSectionViewModel(key: "session_key_uri", value: sessionKey.URI),
