@@ -85,6 +85,7 @@
 		87D573C5284112D000BFBA88 /* InteractorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C0284112D000BFBA88 /* InteractorAssembly.swift */; };
 		87D573C6284112D000BFBA88 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */; };
 		EC288F282862EAE600F8A7DB /* HLSAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */; };
+		ECC8E16F286D964F003A708C /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E16E286D964F003A708C /* KeyValueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +291,7 @@
 		EC288F202862E97000F8A7DB /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLSAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSAnalyzerTests.swift; sourceTree = "<group>"; };
+		ECC8E16E286D964F003A708C /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +566,7 @@
 				874E1FEC2840CC9C00552CBE /* ContentView.swift */,
 				87C265862846066C007F65E1 /* SelectionView.swift */,
 				87C2656728451234007F65E1 /* MasterView.swift */,
+				ECC8E16E286D964F003A708C /* KeyValueView.swift */,
 				87C2658E28461448007F65E1 /* MediaAlternativeRenditionDetailView.swift */,
 				87C26590284619FE007F65E1 /* MediaPlaylistDetailView.swift */,
 				87C2659228461A31007F65E1 /* IFramePlaylistDetailView.swift */,
@@ -873,6 +876,7 @@
 				87D573C3284112D000BFBA88 /* MainDependencyProvider.swift in Sources */,
 				87C2656828451234007F65E1 /* MasterView.swift in Sources */,
 				87C26591284619FE007F65E1 /* MediaPlaylistDetailView.swift in Sources */,
+				ECC8E16F286D964F003A708C /* KeyValueView.swift in Sources */,
 				87C265A4284655D0007F65E1 /* SegmentDetailView.swift in Sources */,
 				87C2658F28461448007F65E1 /* MediaAlternativeRenditionDetailView.swift in Sources */,
 				87C2659328461A31007F65E1 /* IFramePlaylistDetailView.swift in Sources */,
