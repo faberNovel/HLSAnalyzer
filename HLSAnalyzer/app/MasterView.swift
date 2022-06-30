@@ -72,7 +72,7 @@ struct KeyValueView: View {
 
     var body: some View {
         HStack {
-            Text(key).font(.body.bold())
+            Text(LocalizedStringKey(key)).font(.body.bold())
             if let value = value {
                 Spacer()
                 Text(value).truncationMode(.head).lineLimit(1).foregroundColor(.gray)
