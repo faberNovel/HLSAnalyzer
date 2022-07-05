@@ -14,13 +14,13 @@ struct MediaAlternativeRenditionDetailView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            KeyValueView(key: "alternative_rendition_type", value: "\(mediaAlternativeRendition.type)")
-            KeyValueView(key: "alternative_rendition_group", value: mediaAlternativeRendition.group)
-            KeyValueView(key: "alternative_rendition_name", value: mediaAlternativeRendition.name)
-            KeyValueView(key: "alternative_rendition_language", value: mediaAlternativeRendition.language)
-            KeyValueView(key: "alternative_rendition_URI", value: mediaAlternativeRendition.URI.flatMap { "\($0)" } ?? "_")
-            KeyValueView(key: "alternative_rendition_defaultRendition", value: "\(mediaAlternativeRendition.defaultRendition)")
-            KeyValueView(key: "alternative_rendition_autoselect", value: "\(mediaAlternativeRendition.autoselect)")
+            KeyValueView(key: "alternative_rendition_type", link: mediaAlternativeRendition.rfcLink, value: "\(mediaAlternativeRendition.type)")
+            KeyValueView(key: "alternative_rendition_group", link: mediaAlternativeRendition.rfcLink, value: mediaAlternativeRendition.group)
+            KeyValueView(key: "alternative_rendition_name", link: mediaAlternativeRendition.rfcLink, value: mediaAlternativeRendition.name)
+            KeyValueView(key: "alternative_rendition_language", link: mediaAlternativeRendition.rfcLink, value: mediaAlternativeRendition.language)
+            KeyValueView(key: "alternative_rendition_URI", link: mediaAlternativeRendition.rfcLink, value: mediaAlternativeRendition.URI.flatMap { "\($0)" } ?? "_")
+            KeyValueView(key: "alternative_rendition_defaultRendition", link: mediaAlternativeRendition.rfcLink, value: "\(mediaAlternativeRendition.defaultRendition)")
+            KeyValueView(key: "alternative_rendition_autoselect", link: mediaAlternativeRendition.rfcLink, value: "\(mediaAlternativeRendition.autoselect)")
             Spacer()
         }
         .padding(20)
