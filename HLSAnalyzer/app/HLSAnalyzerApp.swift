@@ -42,9 +42,3 @@ class StateHolder: ObservableObject {
 
     @Published public var state = State.openURL
 }
-
-struct Viewer: View {
-    var body: some View {
-        Text("Viewer")
-    }
-}
