@@ -23,6 +23,8 @@ class PresenterAssembly: Assembly {
         container.register(MediaPlaylistDetailPresenter.self) { r, mediaPlaylist in
             MediaPlaylistDetailPresenter(mediaPlaylist: mediaPlaylist, mediaPlaylistInteractor: r.resolve(MediaPlaylistInteractor.self)!)
         }
-
+        container.register(PreviewPresenter.self) { r, mediaPlaylist in
+            PreviewPresenter(m3u8: mediaPlaylist)
+        }
     }
 }

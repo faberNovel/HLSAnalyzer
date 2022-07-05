@@ -11,7 +11,7 @@ import M3U8Parser
 
 public class MasterPresenter: ObservableObject {
 
-    private let m3u8URL: M3U8URL
+    public let m3u8URL: M3U8URL
     @Published public var viewModel: [MasterSectionViewModel]?
     @Published public var loading = false
     @Published public var error: Error?

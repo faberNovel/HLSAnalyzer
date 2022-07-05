@@ -25,6 +25,7 @@ struct ContentView: View {
             case .m3u8(let m3u8):
                 MainDependencyProvider.main.masterView(m3u8URL: m3u8)
                     .frame(minWidth: 1200, minHeight: 400)
+                    .environmentObject(stateHolder)
             case .preview(let m3u8):
                 MainDependencyProvider.main.previewView(m3u8URL: m3u8)
                     .frame(minWidth: 1080, minHeight: 720)

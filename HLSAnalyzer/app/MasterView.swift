@@ -12,6 +12,7 @@ import M3U8Parser
 struct MasterView: View {
 
     @ObservedObject var presenter: MasterPresenter
+    @EnvironmentObject var stateHolder: StateHolder
 
     var body: some View {
         StatefulView(
@@ -20,7 +21,7 @@ struct MasterView: View {
             viewModel: $presenter.viewModel,
             placeholderView: { Text("no_m3u8_placeholder") }
         ) {
-                MasterDetailView(title: presenter.title, sections: $0)
+            MasterDetailView(title: presenter.title, m3u8: presenter.m3u8URL, sections: $0)
         }
         .onAppear { [weak presenter] in
             presenter?.appearance()
@@ -31,7 +32,9 @@ struct MasterView: View {
 struct MasterDetailView: View {
 
     let title: String
+    let m3u8: M3U8URL
     let sections: [MasterSectionViewModel]
+    @EnvironmentObject var stateHolder: StateHolder
 
     var body: some View {
         NavigationView {
@@ -57,6 +60,10 @@ struct MasterDetailView: View {
                     }
                 case .rows, .none:
                     KeyValueView(key: item.viewModel.key, link: item.viewModel.link, value: item.viewModel.value)
+                case .preview:
+                    NavigationLink("preview") {
+                        MainDependencyProvider.main.previewView(m3u8URL: m3u8)
+                    }
                 }
             }
             .listStyle(.sidebar)

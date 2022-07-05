@@ -41,4 +41,8 @@ class MainDependencyProvider {
     func mediaPlaylistDetailView(mediaPlaylist: MediaPlaylist) -> MediaPlaylistDetailView {
         MediaPlaylistDetailView(presenter: presenterAssembler.resolver.resolve(MediaPlaylistDetailPresenter.self, argument: mediaPlaylist)!)
     }
+
+    func previewView(m3u8URL: M3U8URL) -> PreviewView {
+        PreviewView(presenter: presenterAssembler.resolver.resolve(PreviewPresenter.self, argument: m3u8URL)!)
+    }
 }
