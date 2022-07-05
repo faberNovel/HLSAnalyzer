@@ -30,8 +30,8 @@ class MainDependencyProvider {
 
     // MARK: - Presenters
 
-    func selectionView(_ selection: @escaping (M3U8URL) -> Void) -> SelectionView {
-        SelectionView(presenter: presenterAssembler.resolver.resolve(SelectionPresenter.self)!, selection: selection)
+    func selectionView(_ selection: @escaping (M3U8URL) -> Void, preview: @escaping (M3U8URL) -> Void) -> SelectionView {
+        SelectionView(presenter: presenterAssembler.resolver.resolve(SelectionPresenter.self)!, selection: selection, preview: preview)
     }
 
     func masterView(m3u8URL: M3U8URL) -> MasterView {

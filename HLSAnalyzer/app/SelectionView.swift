@@ -14,31 +14,20 @@ struct SelectionView: View {
     @ObservedObject var presenter: SelectionPresenter
 
     let selection: (_: M3U8URL) -> Void
+    let preview: (_: M3U8URL) -> Void
 
     var body: some View {
         HStack {
             TextField("entry_placeholder", text: $presenter.entry)
                 .disableAutocorrection(true)
-                .onSubmit(checkAndSelect)
-            Button("load", action: checkAndSelect).disabled(presenter.m3u8URL == nil)
+                .onSubmit { check(then: selection) }
+            Button("load", action: { check(then: selection) }).disabled(presenter.m3u8URL == nil)
+            Button("preview", action: { check(then: preview) }).disabled(presenter.m3u8URL == nil)
         }.padding(30)
     }
 
-    private func checkAndSelect() {
+    private func check(then action: (_: M3U8URL) -> Void) {
         guard let m3u8URL = presenter.m3u8URL else { return }
-        selection(m3u8URL)
-    }
-}
-
-private struct OptionnalButton: View {
-
-    let m3u8URL: M3U8URL?
-
-    var body: some View {
-        if let m3u8URL = self.m3u8URL {
-            MainDependencyProvider.main.masterView(m3u8URL: m3u8URL)
-        } else {
-            EmptyView()
-        }
+        action(m3u8URL)
     }
 }
