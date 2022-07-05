@@ -85,6 +85,8 @@
 		87D573C5284112D000BFBA88 /* InteractorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C0284112D000BFBA88 /* InteractorAssembly.swift */; };
 		87D573C6284112D000BFBA88 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */; };
 		EC288F282862EAE600F8A7DB /* HLSAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */; };
+		ECBC9FFA28742461000EF01D /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9FF928742461000EF01D /* PreviewView.swift */; };
+		ECBC9FFD28742568000EF01D /* PreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9FFC28742568000EF01D /* PreviewPresenter.swift */; };
 		ECC8E16F286D964F003A708C /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E16E286D964F003A708C /* KeyValueView.swift */; };
 		ECC8E171286DA3BA003A708C /* M3U8+RFCLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */; };
 /* End PBXBuildFile section */
@@ -292,6 +294,8 @@
 		EC288F202862E97000F8A7DB /* ci_post_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_xcodebuild.sh; sourceTree = "<group>"; };
 		EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLSAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSAnalyzerTests.swift; sourceTree = "<group>"; };
+		ECBC9FF928742461000EF01D /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		ECBC9FFC28742568000EF01D /* PreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPresenter.swift; sourceTree = "<group>"; };
 		ECC8E16E286D964F003A708C /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M3U8+RFCLinks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -411,6 +415,7 @@
 				87C2658828461278007F65E1 /* Selection */,
 				87C26589284612A3007F65E1 /* Master */,
 				87C2659528461B5F007F65E1 /* MediaPlaylistDetail */,
+				ECBC9FFB28742554000EF01D /* Preview */,
 			);
 			path = backstage;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				87C26590284619FE007F65E1 /* MediaPlaylistDetailView.swift */,
 				87C2659228461A31007F65E1 /* IFramePlaylistDetailView.swift */,
 				87C265A3284655D0007F65E1 /* SegmentDetailView.swift */,
+				ECBC9FF928742461000EF01D /* PreviewView.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -604,6 +610,14 @@
 				EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */,
 			);
 			path = HLSAnalyzerTests;
+			sourceTree = "<group>";
+		};
+		ECBC9FFB28742554000EF01D /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				ECBC9FFC28742568000EF01D /* PreviewPresenter.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -883,6 +897,7 @@
 				87C265A4284655D0007F65E1 /* SegmentDetailView.swift in Sources */,
 				87C2658F28461448007F65E1 /* MediaAlternativeRenditionDetailView.swift in Sources */,
 				87C2659328461A31007F65E1 /* IFramePlaylistDetailView.swift in Sources */,
+				ECBC9FFA28742461000EF01D /* PreviewView.swift in Sources */,
 				87D573C5284112D000BFBA88 /* InteractorAssembly.swift in Sources */,
 				87D573C6284112D000BFBA88 /* RepositoryAssembly.swift in Sources */,
 				87C265872846066C007F65E1 /* SelectionView.swift in Sources */,
@@ -897,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C2656628450AD5007F65E1 /* MasterPresenter.swift in Sources */,
+				ECBC9FFD28742568000EF01D /* PreviewPresenter.swift in Sources */,
 				875C308D2847901200339606 /* String+Path.swift in Sources */,
 				87C2658D28461303007F65E1 /* MasterSectionViewModel.swift in Sources */,
 				875C308928475CA400339606 /* KeyValueViewModel.swift in Sources */,
