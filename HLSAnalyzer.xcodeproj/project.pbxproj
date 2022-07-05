@@ -86,6 +86,7 @@
 		87D573C6284112D000BFBA88 /* RepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D573C1284112D000BFBA88 /* RepositoryAssembly.swift */; };
 		EC288F282862EAE600F8A7DB /* HLSAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */; };
 		ECC8E16F286D964F003A708C /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E16E286D964F003A708C /* KeyValueView.swift */; };
+		ECC8E171286DA3BA003A708C /* M3U8+RFCLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +293,7 @@
 		EC288F252862EAE600F8A7DB /* HLSAnalyzerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HLSAnalyzerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC288F272862EAE600F8A7DB /* HLSAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLSAnalyzerTests.swift; sourceTree = "<group>"; };
 		ECC8E16E286D964F003A708C /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
+		ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M3U8+RFCLinks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +420,7 @@
 			children = (
 				875C308828475CA400339606 /* KeyValueViewModel.swift */,
 				875C308C2847901200339606 /* String+Path.swift */,
+				ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				875C308928475CA400339606 /* KeyValueViewModel.swift in Sources */,
 				874E20162840D4E600552CBE /* ContentPresenter.swift in Sources */,
 				87C265A228465146007F65E1 /* MediaPlaylistDetailMapper.swift in Sources */,
+				ECC8E171286DA3BA003A708C /* M3U8+RFCLinks.swift in Sources */,
 				87C265A02846509D007F65E1 /* MediaPlaylistDetailSectionViewModel.swift in Sources */,
 				87C2658B284612B2007F65E1 /* MasterMapper.swift in Sources */,
 				87C2659828461B97007F65E1 /* MediaPlaylistDetailPresenter.swift in Sources */,

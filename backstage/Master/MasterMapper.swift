@@ -15,11 +15,20 @@ struct MasterMapper {
 
     func map() -> [MasterSectionViewModel] {
         [
-            MasterSectionViewModel(key: "master_tag", value: masterPlaylist.extTag),
-            MasterSectionViewModel(key: "master_version", value: String(masterPlaylist.version)),
+            MasterSectionViewModel(
+                key: "master_tag",
+                link: masterPlaylist.tagRfcLink,
+                value: masterPlaylist.extTag
+            ),
+            MasterSectionViewModel(
+                key: "master_version",
+                link: masterPlaylist.versionRfcLink,
+                value: String(masterPlaylist.version)
+            ),
             masterPlaylist.sessionKeySectionViewModel,
             MasterSectionViewModel(
                 key: "alternative_renditions",
+                link: masterPlaylist.alternativeRenditionRfcLink,
                 value: "\(masterPlaylist.mediaAlternativeRenditions.count)",
                 navigation: masterPlaylist.mediaAlternativeRenditions.count > 0
                 ? .rows(masterPlaylist.mediaAlternativeRenditions.map {
@@ -34,6 +43,7 @@ struct MasterMapper {
             ),
             MasterSectionViewModel(
                 key: "media_playlists",
+                link: masterPlaylist.mediaPlaylistsRfcLink,
                 value: "\(masterPlaylist.mediaPlaylists.count)",
                 navigation: masterPlaylist.mediaPlaylists.count > 0
                 ? .rows(masterPlaylist.mediaPlaylists.map {
@@ -47,6 +57,7 @@ struct MasterMapper {
             ),
             MasterSectionViewModel(
                 key: "iframe_playlist",
+                link: masterPlaylist.iFramePlaylistsRfcLink,
                 value: "\(masterPlaylist.iFramePlaylists.count)",
                 navigation: masterPlaylist.iFramePlaylists.count > 0
                 ? .rows(masterPlaylist.iFramePlaylists.map { MasterSectionViewModel(key: "\($0.bandwidth)", value: $0.URI.readablePathName) })
@@ -62,18 +73,46 @@ private extension MasterPlaylist {
         if let sessionKey = sessionKey {
             return MasterSectionViewModel(
                 key: "session_key",
+                link: sessionKeyRfclink,
                 value: "",
                 navigation: .rows([
-                    MasterSectionViewModel(key: "session_key_method", value: sessionKey.method.rawValue),
-                    MasterSectionViewModel(key: "session_key_type", value: sessionKey.playlistType.stringValue),
-                    MasterSectionViewModel(key: "session_key_uri", value: sessionKey.URI),
-                    MasterSectionViewModel(key: "session_key_iv", value: sessionKey.IV),
-                    MasterSectionViewModel(key: "session_key_key_format", value: sessionKey.keyFormat),
-                    MasterSectionViewModel(key: "session_key_key_format_version", value: sessionKey.keyFormatVersion)
+                    MasterSectionViewModel(
+                        key: "session_key_method",
+                        link: sessionKeyMethodRfclink,
+                        value: sessionKey.method.rawValue
+                    ),
+                    MasterSectionViewModel(
+                        key: "session_key_type",
+                        value: sessionKey.playlistType.stringValue
+                    ),
+                    MasterSectionViewModel(
+                        key: "session_key_uri",
+                        link: sessionKeyURIRfclink,
+                        value: sessionKey.URI
+                    ),
+                    MasterSectionViewModel(
+                        key: "session_key_iv",
+                        link: sessionKeyIVRfclink,
+                        value: sessionKey.IV
+                    ),
+                    MasterSectionViewModel(
+                        key: "session_key_key_format",
+                        link: sessionKeyKeyFormatRfclink,
+                        value: sessionKey.keyFormat
+                    ),
+                    MasterSectionViewModel(
+                        key: "session_key_key_format_version",
+                        link: sessionKeyKeyFormatVersionRfclink,
+                        value: sessionKey.keyFormatVersion
+                    )
                 ])
             )
         } else {
-            return MasterSectionViewModel(key: "session_key", value: NSLocalizedString("no_session_key", comment: ""))
+            return MasterSectionViewModel(
+                key: "session_key",
+                link: sessionKeyRfclink,
+                value: NSLocalizedString("no_session_key", comment: "")
+            )
         }
     }
 

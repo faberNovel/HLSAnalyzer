@@ -42,7 +42,7 @@ struct MediaPlaylistDetailInternalView: View {
                         KeyValueView(key: item.viewModel.key, value: item.viewModel.value)
                     }
                 case .rows, .none:
-                    KeyValueView(key: item.viewModel.key, value: item.viewModel.value)
+                    KeyValueView(key: item.viewModel.key, link: item.viewModel.link, value: item.viewModel.value)
                 }
             }
             .frame(minWidth: 400)

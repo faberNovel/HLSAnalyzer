@@ -14,7 +14,14 @@ public protocol KeyValueNavigation {
 public struct KeyValueViewModel: Identifiable {
     public let id = UUID()
     public let key: String
+    public let link: URL?
     public let value: String?
+
+    public init(key: String, link: URL? = nil, value: String?) {
+        self.key = key
+        self.link = link
+        self.value = value
+    }
 }
 
 public struct NavigableKeyValueViewModel<Navigation: KeyValueNavigation>: Identifiable {
@@ -25,8 +32,8 @@ public struct NavigableKeyValueViewModel<Navigation: KeyValueNavigation>: Identi
 
     public var rows: [Self]? { navigation?.rows }
 
-    public init(key: String, value: String?, navigation: Navigation? = nil) {
-        self.viewModel = KeyValueViewModel(key: key, value: value)
+    public init(key: String, link: URL? = nil, value: String?, navigation: Navigation? = nil) {
+        self.viewModel = KeyValueViewModel(key: key, link: link, value: value)
         self.navigation = navigation
     }
 }
@@ -40,7 +47,7 @@ public typealias LeafKeyValueViewModel = NavigableKeyValueViewModel<LeafNavigati
 extension LeafKeyValueViewModel {
 
     func contravariant<NewNavigation: KeyValueNavigation>() -> NavigableKeyValueViewModel<NewNavigation> {
-        NavigableKeyValueViewModel<NewNavigation>(key: viewModel.key, value: viewModel.value)
+        NavigableKeyValueViewModel<NewNavigation>(key: viewModel.key, link: viewModel.link, value: viewModel.value)
     }
 
 }

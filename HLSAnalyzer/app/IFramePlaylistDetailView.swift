@@ -14,10 +14,10 @@ struct IFramePlaylistDetailView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            KeyValueView(key: "iframe_playlist_bandwidth", value: "\(iFramePlaylist.bandwidth)")
-            KeyValueView(key: "iframe_playlist_URI", value: iFramePlaylist.URI)
-            KeyValueView(key: "iframe_playlist_resolution", value: iFramePlaylist.resolution?.stringValue)
-            KeyValueView(key: "iframe_playlist_codecs", value: iFramePlaylist.codecs)
+            KeyValueView(key: "iframe_playlist_bandwidth", link: iFramePlaylist.rfcLink,value: "\(iFramePlaylist.bandwidth)")
+            KeyValueView(key: "iframe_playlist_URI", link: iFramePlaylist.rfcLink,value: iFramePlaylist.URI)
+            KeyValueView(key: "iframe_playlist_resolution", link: iFramePlaylist.rfcLink,value: iFramePlaylist.resolution?.stringValue)
+            KeyValueView(key: "iframe_playlist_codecs", link: iFramePlaylist.rfcLink,value: iFramePlaylist.codecs)
             Spacer()
         }
         .padding(20)
