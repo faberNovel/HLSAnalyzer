@@ -16,6 +16,7 @@ public enum MasterPlaylistNavigation: KeyValueNavigation {
     case mediaPlaylist(_: MediaPlaylist)
     case iFramePlaylist(_: IFramePlaylist)
     case rows(_: [MasterSectionViewModel])
+    case preview
 
     public var rows: [MasterSectionViewModel]? {
         guard case let .rows(rows) = self else { return nil }

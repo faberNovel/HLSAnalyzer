@@ -62,7 +62,8 @@ struct MasterMapper {
                 navigation: masterPlaylist.iFramePlaylists.count > 0
                 ? .rows(masterPlaylist.iFramePlaylists.map { MasterSectionViewModel(key: "\($0.bandwidth)", value: $0.URI.readablePathName) })
                 : .none
-            )
+            ),
+            MasterSectionViewModel(key: "preview", value: nil, navigation: .preview)
         ]
     }
 }

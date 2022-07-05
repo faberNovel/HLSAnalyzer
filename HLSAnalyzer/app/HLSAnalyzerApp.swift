@@ -38,13 +38,8 @@ class StateHolder: ObservableObject {
         case empty
         case openURL
         case m3u8(_: M3U8URL)
+        case preview(_: M3U8URL)
     }
 
     @Published public var state = State.openURL
-}
-
-struct Viewer: View {
-    var body: some View {
-        Text("Viewer")
-    }
 }

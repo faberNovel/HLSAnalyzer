@@ -21,9 +21,14 @@ struct ContentView: View {
                 EmptyView()
             case .openURL:
                 MainDependencyProvider.main.selectionView { stateHolder.state = .m3u8($0) }
+            preview: { stateHolder.state = .preview($0) }
             case .m3u8(let m3u8):
                 MainDependencyProvider.main.masterView(m3u8URL: m3u8)
                     .frame(minWidth: 1200, minHeight: 400)
+                    .environmentObject(stateHolder)
+            case .preview(let m3u8):
+                MainDependencyProvider.main.previewView(m3u8URL: m3u8)
+                    .frame(minWidth: 1080, minHeight: 720)
             }
         }
     }
