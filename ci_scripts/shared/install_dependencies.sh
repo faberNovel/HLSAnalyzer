@@ -12,7 +12,7 @@ source ~/.zshrc
 
 
 echo "### Install bunder"
-gem install --user-install bundler:2.2.22
+gem install --user-install bundler:2.3.17
 
 bundle config set --local deployment 'true'
 
