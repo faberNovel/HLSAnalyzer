@@ -89,6 +89,7 @@
 		ECBC9FFD28742568000EF01D /* PreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBC9FFC28742568000EF01D /* PreviewPresenter.swift */; };
 		ECC8E16F286D964F003A708C /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E16E286D964F003A708C /* KeyValueView.swift */; };
 		ECC8E171286DA3BA003A708C /* M3U8+RFCLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */; };
+		ECD16CB628786CE1004E2021 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD16CB528786CE1004E2021 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +299,7 @@
 		ECBC9FFC28742568000EF01D /* PreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPresenter.swift; sourceTree = "<group>"; };
 		ECC8E16E286D964F003A708C /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		ECC8E170286DA3BA003A708C /* M3U8+RFCLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "M3U8+RFCLinks.swift"; sourceTree = "<group>"; };
+		ECD16CB528786CE1004E2021 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			files = (
 				87D5735D284109FC00BFBA88 /* M3U8Parser.framework in Frameworks */,
 				87D573BA2841126C00BFBA88 /* Swinject in Frameworks */,
+				ECD16CB628786CE1004E2021 /* AVKit.framework in Frameworks */,
 				87D5739928410B1C00BFBA88 /* data.framework in Frameworks */,
 				874E200F2840D45300552CBE /* backstage.framework in Frameworks */,
 				87D573AB28410B2300BFBA88 /* core.framework in Frameworks */,
@@ -468,6 +471,7 @@
 		87C2656A28460300007F65E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECD16CB528786CE1004E2021 /* AVKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
