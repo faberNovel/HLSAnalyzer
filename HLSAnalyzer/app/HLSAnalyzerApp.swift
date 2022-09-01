@@ -15,6 +15,7 @@ struct HLSAnalyzerApp: App {
     @Environment(\.openURL) var openURL
 
     var body: some Scene {
+
         WindowGroup {
             ContentView()
             .onAppear { NSWindow.allowsAutomaticWindowTabbing = false }
